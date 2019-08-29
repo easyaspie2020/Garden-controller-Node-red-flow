@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+<div id="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+</div>
 
-You can use the [editor on GitHub](https://github.com/easyaspie2020/x/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
 
-### Markdown
+/* Page content */
+.content {
+  padding: 16px;
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-```markdown
-Syntax highlighted code block
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
 
-# Header 1
-## Header 2
-### Header 3
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
 
-- Bulleted
-- List
+// Get the navbar
+var navbar = document.getElementById("navbar");
 
-1. Numbered
-2. List
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
 
-**Bold** and _Italic_ and `Code` text
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/easyaspie2020/x/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
