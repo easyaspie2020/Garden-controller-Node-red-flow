@@ -1,0 +1,766 @@
+[
+    {
+        "id": "468bd5a50ec1676a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2f30751821897409",
+        "type": "ui_tab",
+        "name": "Garden",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a9103d5f54472c29",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b28a7ad8c37d7485",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "2f30751821897409",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1f950b933b42d960",
+        "type": "ui_time_scheduler",
+        "z": "468bd5a50ec1676a",
+        "group": "b28a7ad8c37d7485",
+        "name": "",
+        "startDay": "1",
+        "refresh": 60,
+        "devices": [
+            "Back",
+            "Orchard",
+            "Centre",
+            "Front",
+            "Hothouse",
+            "Zone 6"
+        ],
+        "singleOff": false,
+        "onlySendChange": false,
+        "customPayload": false,
+        "eventMode": false,
+        "eventOptions": [],
+        "sendTopic": false,
+        "lat": "",
+        "lon": "",
+        "customContextStore": "",
+        "outputs": 7,
+        "order": 0,
+        "width": "6",
+        "height": "12",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "6648d705a70d1982"
+            ],
+            [
+                "3bff8e45cd8263b7"
+            ],
+            [
+                "1db37afb3c9c619d"
+            ],
+            [
+                "86295a48a6d6297a"
+            ],
+            [
+                "998d597a7334534d"
+            ],
+            [
+                "e78156ab1e156a2c"
+            ],
+            [
+                "387ce91b9b401768"
+            ]
+        ]
+    },
+    {
+        "id": "ec115e5b079ceee1",
+        "type": "inject",
+        "z": "468bd5a50ec1676a",
+        "name": "Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "a6f9f9686fd62916"
+            ]
+        ]
+    },
+    {
+        "id": "a6f9f9686fd62916",
+        "type": "file in",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "filename": "/home/pi/timers",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "1f950b933b42d960"
+            ]
+        ]
+    },
+    {
+        "id": "6648d705a70d1982",
+        "type": "file",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "filename": "/home/pi/timers",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 340,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3bff8e45cd8263b7",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Back",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "0d9c8a7cfaa3d41b"
+            ]
+        ]
+    },
+    {
+        "id": "c41eb99550fd668e",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "18",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 820,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4327f31457e11c31",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "24",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "34b6a53f9c28dec8",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "25",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 820,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1c53c08da2904566",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "12",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "86dccab033999db4",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "16",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 820,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a50a44d205a58fd1",
+        "type": "rpi-gpio out",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "pin": "21",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "1db37afb3c9c619d",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Orchard",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "eb26efd9bc7e753e"
+            ]
+        ]
+    },
+    {
+        "id": "86295a48a6d6297a",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Centre",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "20c22a92650cdb4a"
+            ]
+        ]
+    },
+    {
+        "id": "998d597a7334534d",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Front",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "56a83acdfd5c2f7e"
+            ]
+        ]
+    },
+    {
+        "id": "e78156ab1e156a2c",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Hothouse",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 320,
+        "y": 440,
+        "wires": [
+            [
+                "4821cb7afadc891b"
+            ]
+        ]
+    },
+    {
+        "id": "387ce91b9b401768",
+        "type": "ui_switch",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "label": "Zone 6",
+        "tooltip": "",
+        "group": "b28a7ad8c37d7485",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "f2c57d0fde1abaad"
+            ]
+        ]
+    },
+    {
+        "id": "0d9c8a7cfaa3d41b",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 280,
+        "wires": [
+            [
+                "c41eb99550fd668e"
+            ]
+        ]
+    },
+    {
+        "id": "eb26efd9bc7e753e",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "4327f31457e11c31"
+            ]
+        ]
+    },
+    {
+        "id": "20c22a92650cdb4a",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "34b6a53f9c28dec8"
+            ]
+        ]
+    },
+    {
+        "id": "56a83acdfd5c2f7e",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "1c53c08da2904566"
+            ]
+        ]
+    },
+    {
+        "id": "4821cb7afadc891b",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "86dccab033999db4"
+            ]
+        ]
+    },
+    {
+        "id": "f2c57d0fde1abaad",
+        "type": "change",
+        "z": "468bd5a50ec1676a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 480,
+        "wires": [
+            [
+                "a50a44d205a58fd1"
+            ]
+        ]
+    }
+]
